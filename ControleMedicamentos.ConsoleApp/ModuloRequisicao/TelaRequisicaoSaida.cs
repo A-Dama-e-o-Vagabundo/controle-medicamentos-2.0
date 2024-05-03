@@ -1,4 +1,5 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
+using ControleMedicamentos.ConsoleApp.ModuloFornecedor.ControleMedicamentos.ConsoleApp.ModuloPaciente;
 using ControleMedicamentos.ConsoleApp.ModuloMedicamento;
 using ControleMedicamentos.ConsoleApp.ModuloPaciente;
 
@@ -6,7 +7,7 @@ namespace ControleMedicamentos.ConsoleApp.ModuloRequisicao
 {
     internal class TelaRequisicaoSaida : TelaBase
     {
-        public TelaPaciente telaPaciente = null;
+        public TelaFornecedor telaPaciente = null;
         public TelaMedicamento telaMedicamento = null;
 
         public RepositorioPaciente repositorioPaciente = null;

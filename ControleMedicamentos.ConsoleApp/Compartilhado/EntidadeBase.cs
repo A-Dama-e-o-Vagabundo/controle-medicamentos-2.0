@@ -5,5 +5,6 @@
         public int Id { get; set; }
 
         public abstract string[] Validar();
+        internal abstract object GerarIdFornecedor();
     }
 }

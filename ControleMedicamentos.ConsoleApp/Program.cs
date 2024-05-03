@@ -1,14 +1,23 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
+using ControleMedicamentos.ConsoleApp.ModuloFornecedor;
+using ControleMedicamentos.ConsoleApp.ModuloFornecedor.ControleMedicamentos.ConsoleApp.ModuloPaciente;
 using ControleMedicamentos.ConsoleApp.ModuloMedicamento;
 using ControleMedicamentos.ConsoleApp.ModuloPaciente;
 using ControleMedicamentos.ConsoleApp.ModuloRequisicao;
+using System;
 
 namespace ControleMedicamentos.ConsoleApp
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            RepositorioFornecedor respositorioFornecedor = new RepositorioFornecedor();
+            TelaFornecedor telaFornecedor = new TelaFornecedor();
+            telaFornecedor.tipoEntidade = "Fornecedor ";
+            telaFornecedor.repositorio = respositorioFornecedor;
+            telaFornecedor.CadastrarEntidadeTeste();
+
             RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
 
             TelaPaciente telaPaciente = new TelaPaciente();
@@ -23,16 +32,9 @@ namespace ControleMedicamentos.ConsoleApp
             telaMedicamento.tipoEntidade = "Medicamento";
 
             RepositorioRequisicaoSaida repositorioRequisicaoSaida = new RepositorioRequisicaoSaida();
-
             TelaRequisicaoSaida telaRequisicaoSaida = new TelaRequisicaoSaida();
             telaRequisicaoSaida.repositorio = repositorioRequisicaoSaida;
             telaRequisicaoSaida.tipoEntidade = "Requisição";
-
-            telaRequisicaoSaida.telaPaciente = telaPaciente;
-            telaRequisicaoSaida.telaMedicamento = telaMedicamento;
-
-            telaRequisicaoSaida.repositorioPaciente = repositorioPaciente;
-            telaRequisicaoSaida.repositorioMedicamento = repositorioMedicamento;
 
             while (true)
             {
@@ -50,7 +52,7 @@ namespace ControleMedicamentos.ConsoleApp
                     tela = telaMedicamento;
 
                 else if (opcaoPrincipalEscolhida == '3')
-                    tela = telaRequisicaoSaida;
+                    tela = telaFornecedor;
 
                 char operacaoEscolhida = tela.ApresentarMenu();
 

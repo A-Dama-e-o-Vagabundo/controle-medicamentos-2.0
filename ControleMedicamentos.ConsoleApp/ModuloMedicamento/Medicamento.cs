@@ -44,5 +44,9 @@ namespace ControleMedicamentos.ConsoleApp.ModuloMedicamento
             return errosFiltrados;
         }
 
+        internal override object GerarIdFornecedor()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

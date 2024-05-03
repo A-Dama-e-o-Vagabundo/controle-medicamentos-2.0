@@ -1,18 +1,18 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
-
-namespace ControleMedicamentos.ConsoleApp.ModuloPaciente
+namespace ControleMedicamentos.ConsoleApp.ModuloFornecedor
 {
-    internal class Paciente : EntidadeBase
+
+    internal class Fornecedor : EntidadeBase
     {
         public string Nome { get; set; }
         public string Telefone { get; set; }
-        public string CartaoSus { get; set; }
+        public string CNPJ { get; set; }
 
-        public Paciente(string nome, string telefone, string cartaoSus)
+        public Fornecedor(string nome, string telefone, string CNPJ)
         {
             Nome = nome;
             Telefone = telefone;
-            CartaoSus = cartaoSus;
+            this.CNPJ = CNPJ;
         }
 
         public override string[] Validar()
@@ -21,13 +21,13 @@ namespace ControleMedicamentos.ConsoleApp.ModuloPaciente
             int contadorErros = 0;
 
             if (Nome.Length < 3)
-                erros[contadorErros++] = "O Nome do Paciente precisa conter ao menos 3 caracteres";
+                erros[contadorErros++] = "O Nome do fornecedor precisa conter ao menos 3 caracteres";
 
             if (string.IsNullOrEmpty(Telefone))
                 erros[contadorErros++] = "O Telefone precisa ser preenchido";
 
-            if (string.IsNullOrEmpty(CartaoSus))
-                erros[contadorErros++] = "O Cartão do SUS precisa ser preenchido";
+            if (string.IsNullOrEmpty(CNPJ))
+                erros[contadorErros++] = "O CNPJ precisa ser preenchido";
 
             string[] errosFiltrados = new string[contadorErros];
 
@@ -42,3 +42,4 @@ namespace ControleMedicamentos.ConsoleApp.ModuloPaciente
         }
     }
 }
+

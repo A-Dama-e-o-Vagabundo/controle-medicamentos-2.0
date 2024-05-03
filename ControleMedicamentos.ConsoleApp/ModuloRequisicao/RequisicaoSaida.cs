@@ -50,5 +50,10 @@ namespace ControleMedicamentos.ConsoleApp.ModuloRequisicao
             Medicamento.Quantidade -= QuantidadeRetirada;
             return true;
         }
+
+        internal override object GerarIdFornecedor()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
