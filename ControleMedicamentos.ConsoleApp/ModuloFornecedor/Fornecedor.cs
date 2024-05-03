@@ -1,7 +1,7 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
+
 namespace ControleMedicamentos.ConsoleApp.ModuloFornecedor
 {
-
     internal class Fornecedor : EntidadeBase
     {
         public string Nome { get; set; }
@@ -34,11 +34,6 @@ namespace ControleMedicamentos.ConsoleApp.ModuloFornecedor
             Array.Copy(erros, errosFiltrados, contadorErros);
 
             return errosFiltrados;
-        }
-
-        internal override object GerarIdFornecedor()
-        {
-            throw new NotImplementedException();
         }
     }
 }

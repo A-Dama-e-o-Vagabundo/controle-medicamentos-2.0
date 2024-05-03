@@ -1,9 +1,8 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
 
-namespace ControleMedicamentos.ConsoleApp.ModuloPaciente
-{
-    internal class RepositorioPaciente : RepositorioBase
-    {
+namespace ControleMedicamentos.ConsoleApp.ModuloPaciente;
 
-    }
+internal class RepositorioPaciente : RepositorioBase
+{
+
 }

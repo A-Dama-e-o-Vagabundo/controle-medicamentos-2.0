@@ -1,4 +1,5 @@
 ﻿using ControleMedicamentos.ConsoleApp.Compartilhado;
+using ControleMedicamentos.ConsoleApp.ModuloFornecedor;
 using ControleMedicamentos.ConsoleApp.ModuloFuncionario;
 using ControleMedicamentos.ConsoleApp.ModuloMedicamento;
 using ControleMedicamentos.ConsoleApp.ModuloPaciente;
@@ -11,14 +12,18 @@ namespace ControleMedicamentos.ConsoleApp
         static void Main(string[] args)
         {
             RepositorioFuncionario respositorioFuncionario = new RepositorioFuncionario();
-
             TelaFuncionario telaFuncionario = new TelaFuncionario();
             telaFuncionario.tipoEntidade = "Funcionario ";
             telaFuncionario.repositorio = respositorioFuncionario;
             telaFuncionario.CadastrarEntidadeTeste();
 
-            RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
+            RepositorioFornecedor respositorioFornecedor = new RepositorioFornecedor();
+            TelaFornecedor telaFornecedor = new TelaFornecedor();
+            telaFornecedor.tipoEntidade = "Fornecedor ";
+            telaFornecedor.repositorio = respositorioFornecedor;
+            telaFornecedor.CadastrarEntidadeTeste();
 
+            RepositorioPaciente repositorioPaciente = new RepositorioPaciente();
             TelaPaciente telaPaciente = new TelaPaciente();
             telaPaciente.tipoEntidade = "Paciente";
             telaPaciente.repositorio = repositorioPaciente;
@@ -58,9 +63,14 @@ namespace ControleMedicamentos.ConsoleApp
                     tela = telaMedicamento;
 
                 else if (opcaoPrincipalEscolhida == '3')
-                    //tela = telaRequisicaoSaida;
                     tela = telaFuncionario;
-                
+
+                else if (opcaoPrincipalEscolhida == '4')
+                    tela = telaFornecedor;
+
+                else if (opcaoPrincipalEscolhida == '5')
+                    tela = telaRequisicaoSaida;
+
                 char operacaoEscolhida = tela.ApresentarMenu();
 
                 if (operacaoEscolhida == 'S' || operacaoEscolhida == 's')
